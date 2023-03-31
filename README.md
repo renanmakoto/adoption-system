@@ -21,7 +21,7 @@ TECHNOLOGIES USED:
 
 <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Learn/HTML"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpngGRjYX1ca7qAADU3K6eGLj7ShQE3L2otdzfryl_Y9Ht2QRoQKYQbsXd36XIxMbYOw0" style="width: 64px; height: 64px;" /></a>
 
-<a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" style="width: 54px; height: 74px;" /></a>
+<a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" style="width: 50px; height: 70px;" /></a>
 
 <a target="_blank" href="https://www.typescriptlang.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" style="width: 64px; height: 64px;" /></a>
 
