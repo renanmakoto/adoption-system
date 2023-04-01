@@ -30,5 +30,4 @@ FRONT-END
 BACK-END
 
 <a href="https://www.python.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" style="width: 64px; height: 64px;" /></a>
-
-<a href="https://mui.com/"><img src="https://mui.com/static/logo.png" style="width: 64px; height: 64px;" /></a>
+<a href="https://www.djangoproject.com/"><img src="https://cdn.worldvectorlogo.com/logos/django.svg" style="width: 64px; height: 64px;" /></a>
