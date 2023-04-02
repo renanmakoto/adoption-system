@@ -10,7 +10,7 @@ FRONT-END
 <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" style="width: 44px; height: 64px;" /></a> 
 <a target="_blank" href="https://www.typescriptlang.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" style="width: 64px; height: 64px;" /></a>
 <a href="https://reactjs.org/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/64px-React-icon.svg.png" /></a>
-<a href="https://mui.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/1200px-GraphQL_Logo.svg.png" style="width: 64px; height: 64px;" /></a>
+<a href="https://mui.com/"><img src="https://mui.com/static/logo.png" style="width: 64px; height: 64px;" /></a>
 
 BACK-END
 
