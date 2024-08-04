@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import { ThemeProvider } from '@mui/material'
 import thema from '../ui/themes/theme'
 import Header from '../ui/components/Header/Header'
-import HeaderAdmin from '../ui/components/HeaderAmin/HeaderAdmin'
+import HeaderAdmin from '../ui/components/HeaderAdmin/HeaderAdmin'
 import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps } : AppProps) {
@@ -18,3 +18,4 @@ function MyApp({ Component, pageProps } : AppProps) {
 }
 
 export default MyApp
+

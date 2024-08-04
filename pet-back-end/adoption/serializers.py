@@ -8,7 +8,7 @@ class AdoptionSerializer(serializers.ModelSerializer):
     pet = PetSerializer(many=False, read_only=True)
     pet_id = serializers.PrimaryKeyRelatedField(
         many=False, write_only=True, queryset=Pet.objects.all()
-        )
+    )
 
     class Meta:
         model = Adoption
@@ -16,7 +16,7 @@ class AdoptionSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         validated_data['pet'] = validated_data.pop('pet_id')
-        return super().create(validated_data) 
+        return super().create(validated_data)
 
     def validate_value(self, deposit):
         if deposit < 10:

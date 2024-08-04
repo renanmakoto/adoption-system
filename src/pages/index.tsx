@@ -63,8 +63,8 @@ const Home: NextPage = () => {
                     <Button 
                         color={ 'secondary' }
                         onClick={ () => setSelectedPet(null) }
-                        >
-                            Cancel
+                    >
+                        Cancel
                     </Button>
                     <Button 
                         variant={ 'contained' }
@@ -85,3 +85,4 @@ const Home: NextPage = () => {
 }
 
 export default Home
+

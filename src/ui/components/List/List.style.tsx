@@ -4,20 +4,19 @@ export const ListStyled = styled('ul')`
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    padding: ${ ({ theme }) => theme.spacing(2) };
-    /* overflow-x: hidden; */
+    padding: ${({ theme }) => theme.spacing(2)};
 `;
 
 export const ListItem = styled('li')`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: ${ ({ theme }) => theme.spacing(5) };
-    margin-bottom: ${ ({ theme }) => theme.spacing(5) };
+    gap: ${({ theme }) => theme.spacing(5)};
+    margin-bottom: ${({ theme }) => theme.spacing(5)};
     
-    ${ ({ theme }) => theme.breakpoints.down('md') } {
+    ${({ theme }) => theme.breakpoints.down('md')} {
         grid-template-columns: 1fr;
-        gap: ${ ({ theme }) => theme.spacing(2) };
-        margin-bottom: ${ ({ theme }) => theme.spacing(10) };
+        gap: ${({ theme }) => theme.spacing(2)};
+        margin-bottom: ${({ theme }) => theme.spacing(10)};
     }
 `;
 
@@ -28,7 +27,7 @@ export const PetPhoto = styled('img')`
 export const Info = styled('div')`
     display: flex;
     flex-direction: column;
-    gap: ${ ({ theme }) => theme.spacing(2) };
+    gap: ${({ theme }) => theme.spacing(2)};
 `;
 
 export const Name = styled('h2')`
@@ -39,3 +38,4 @@ export const Description = styled('p')`
     margin: 0;
     word-break: break-word;
 `;
+

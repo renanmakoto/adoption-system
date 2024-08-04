@@ -5,11 +5,12 @@ interface TitleProps {
     subtitle?: string | JSX.Element;
 }
 
-export default function Title(props: TitleProps) {
+export default function Title({ title, subtitle = '' }: TitleProps) {
     return(
         <>
-            <TitleStyled>{props.title}</TitleStyled>
-            <SubTitle>{props.subtitle}</SubTitle>
+            <TitleStyled>{title}</TitleStyled>
+            <SubTitle>{subtitle}</SubTitle>
         </>
     )
 }
+

@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'pet.apps.PetConfig',
     'adoption.apps.AdoptionConfig',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    'pet'
 ]
 
 MIDDLEWARE = [

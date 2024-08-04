@@ -1,7 +1,7 @@
+# pet/views.py
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_201_CREATED, HTTP_400_BAD_REQUEST
-
 from .models import Pet
 from .serializers import PetSerializer
 
@@ -16,11 +16,10 @@ class PetList(APIView):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=HTTP_201_CREATED)
-        
         return Response(
-            { 
-                "message": "There were validation erros.", 
-                "errors": serializer.errors 
+            {
+                "message": "There were validation errors.",
+                "errors": serializer.errors,
             },
-            status=HTTP_400_BAD_REQUEST
+            status=HTTP_400_BAD_REQUEST,
         )

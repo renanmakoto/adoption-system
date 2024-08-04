@@ -1,8 +1,12 @@
 export const TextService = {
     limitText(text: string, maxLength: number): string {
-        if (text.length < maxLength) {
-            return text
+        if (typeof text !== 'string') {
+            throw new Error('Invalid input: text must be a string');
         }
-        return text.slice(0, maxLength) + '...'
+        if (text.length < maxLength) {
+            return text;
+        }
+        return text.slice(0, maxLength) + '...';
     }
 }
+

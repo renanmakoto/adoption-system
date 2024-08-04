@@ -12,16 +12,15 @@ class AdoptionList(APIView):
         serializer = AdoptionSerializer(adoptions, many=True)
         return Response(serializer.data, status=HTTP_200_OK)
 
-
     def post(self, request, format=None):
-        serialiazer = AdoptionSerializer(data=request.data)
-        if serialiazer.is_valid():
-            adoption = serialiazer.save()
+        serializer = AdoptionSerializer(data=request.data)
+        if serializer.is_valid():
+            adoption = serializer.save()
             send_email_confirmation(adoption)
-            return Response(serialiazer.data, status=HTTP_201_CREATED)
+            return Response(serializer.data, status=HTTP_201_CREATED)
         return Response(
             {
-                'errors': serialiazer.errors, 
+                'errors': serializer.errors, 
                 'message': 'There were validation errors'
             }, 
             status=HTTP_400_BAD_REQUEST

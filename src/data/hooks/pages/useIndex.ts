@@ -3,56 +3,70 @@ import { Pet } from '../../@types/Pet'
 import { ApiService } from '@/data/services/ApiService'
 import { AxiosError } from 'axios'
 
+interface ErrorResponse {
+    message: string;
+}
+
 export function useIndex() {
     const [petListUse, setPetList] = useState<Pet[]>([]),
-        [selectedPet, setSelectedPet] = useState < Pet | null > (null),
+        [selectedPet, setSelectedPet] = useState<Pet | null>(null),
         [email, setEmail] = useState(''),
         [value, setValue] = useState(''),
         [message, setMessage] = useState('')
 
-        useEffect(() => {
-            ApiService.get('/pets')
+    useEffect(() => {
+        ApiService.get('/pets')
             .then((res) => {
                 setPetList(res.data)
             })
-        }, [])
+            .catch((error: AxiosError) => {
+                console.error('Error fetching pets:', error)
+                setMessage('Error fetching pets')
+            })
+    }, [])
 
-        useEffect(() => {
-            if (selectedPet === null) {
-                clearForm()
-            }
-        })
+    useEffect(() => {
+        if (selectedPet === null) {
+            clearForm()
+        }
+    }, [selectedPet])
 
-        function toAdopt() {
-            if (selectedPet !== null) {
-                if (adoptionDataValidation()) {
-                    ApiService.post('/adoption', {
-                        pet_id: selectedPet.id,
-                        email,
-                        value
-                    }).then(() => {
+    function toAdopt() {
+        if (selectedPet !== null) {
+            if (adoptionDataValidation()) {
+                ApiService.post('/adoption', {
+                    pet_id: selectedPet.id,
+                    email,
+                    value
+                })
+                    .then(() => {
                         setSelectedPet(null)
-                        setMessage('Pet virtually adopted succesfully!')
+                        setMessage('Pet virtually adopted successfully!')
                         clearForm()
-                    }).catch((error: AxiosError) => {
-                        setMessage(error.response?.data.message)
                     })
-                } else {
-                    setMessage('Fill in the blank spaces correctly.')
-                }
+                    .catch((error: AxiosError) => {
+                        const response = error.response?.data as ErrorResponse;
+                        setMessage(response?.message || 'Adoption failed')
+                    })
+            } else {
+                setMessage('Fill in the blank spaces correctly.')
             }
         }
+    }
 
-        function adoptionDataValidation() {
-            return email.length > 0 && value.length > 0
-        }
+    function adoptionDataValidation() {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        const isEmailValid = emailRegex.test(email)
+        const isValueValid = !isNaN(Number(value)) && Number(value) > 0
+        return isEmailValid && isValueValid
+    }
 
-        function clearForm() {
-            setEmail('')
-            setValue('')
-        }
-    
-        return {
+    function clearForm() {
+        setEmail('')
+        setValue('')
+    }
+
+    return {
         petListUse,
         selectedPet,
         setSelectedPet,
@@ -65,19 +79,3 @@ export function useIndex() {
         toAdopt
     }
 }
-
-/*
-        [
-            {
-                id: 1,
-                name: "Caramelo",
-                history: "dsfddjfsdfsd",
-                photo: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/387B/production/_126795441_gettyimages-979935038-170667a.jpg'
-            },
-            {
-                id: 2,
-                name: "Sausage",
-                history: "dsfddjfsdfsd",
-                photo: 'https://daily.jstor.org/wp-content/uploads/2022/06/how_street_dogs_spend_their_days_1050x700.jpg'
-            }
-        ]*/
